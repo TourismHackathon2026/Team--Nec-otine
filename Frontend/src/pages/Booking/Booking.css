@@ -1,0 +1,71 @@
+.booking {
+  padding: var(--space-2xl) 0;
+}
+
+.booking__card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  max-width: 600px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-md);
+}
+
+.booking__card h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.booking__card > p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.booking__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-md);
+}
+
+.booking__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.booking__field label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.booking__field input,
+.booking__field textarea {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  background-color: var(--color-background);
+}
+
+.booking__field input:focus,
+.booking__field textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.booking__field textarea {
+  resize: vertical;
+}
+
+.booking__actions {
+  display: flex;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+}
+
+.booking__actions .btn {
+  flex: 1;
+}
