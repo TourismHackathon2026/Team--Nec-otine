@@ -1,7 +1,7 @@
-🌍 NepalGuide - AI Travel Planner & Local Guide Platform
+🌍 TourGenie - AI Travel Planner & Local Guide Platform
 📌 Overview
 
-TourGen is an AI-powered travel planning platform that helps tourists generate personalized travel itineraries and connect with verified local guides. The platform combines Artificial Intelligence, interactive maps, weather forecasting, and guide booking into one seamless travel experience.
+TourGenie is an AI-powered travel planning platform that helps tourists generate personalized travel itineraries and connect with verified local guides. The platform combines Artificial Intelligence, interactive maps, weather forecasting, and guide booking into one seamless travel experience.
 
 Whether you're planning your next adventure or looking for a trusted local guide, TourGen makes travel planning smarter, easier, and more personalized.
 
