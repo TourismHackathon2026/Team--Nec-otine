@@ -10,6 +10,7 @@ const dummyGuides = [
     bio: 'Expert trekking guide with 10 years of experience in the Annapurna region.',
     specialties: ['Trekking', 'Photography'],
     pricePerDay: 3000,
+    rating: 4.8, // 👈 Added rating
     profileImage: null
   },
   {
@@ -19,6 +20,7 @@ const dummyGuides = [
     bio: 'Cultural guide specializing in heritage tours around Kathmandu Valley.',
     specialties: ['Culture', 'History', 'Food'],
     pricePerDay: 2500,
+    rating: 4.9, // 👈 Added rating
     profileImage: null
   },
   {
@@ -28,6 +30,7 @@ const dummyGuides = [
     bio: 'Wildlife expert and jungle safari guide in Chitwan National Park.',
     specialties: ['Wildlife', 'Safari', 'Nature'],
     pricePerDay: 3500,
+    rating: 4.5, // 👈 Added rating
     profileImage: null
   }
 ]
@@ -37,8 +40,6 @@ function GuideList() {
   const [loading, setLoading] = useState(true)
 
   useEffect(() => {
-    // Simulating an API call for now
-    // We will replace this with a real API call later
     setTimeout(() => {
       setGuides(dummyGuides)
       setLoading(false)
