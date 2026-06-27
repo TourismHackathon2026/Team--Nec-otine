@@ -1,25 +1,45 @@
 import { useState } from 'react'
 import { useNavigate, Link } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 import Button from '../../components/Button/Button'
 import './Signup.css'
 
 function Signup() {
   const navigate = useNavigate()
+  const { signup } = useAuth()
   const [formData, setFormData] = useState({
-    name: '',
+    fullName: '',
     email: '',
     password: '',
-    role: 'tourist'
+    role: 'tourist',
+    phone: ''
   })
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    console.log('Signup data:', formData)
-    // API call comes later
+    setError(null)
+    setLoading(true)
+
+    try {
+      await signup(
+        formData.fullName,
+        formData.email,
+        formData.password,
+        formData.role,
+        formData.phone
+      )
+      navigate('/dashboard')
+    } catch (err) {
+      setError(err.message || 'Something went wrong. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -28,17 +48,20 @@ function Signup() {
         <h2>Create Account</h2>
         <p>Join NepalGuide and start exploring</p>
 
+        {error && <div className="signup__error">{error}</div>}
+
         <form onSubmit={handleSubmit}>
 
           <div className="signup__field">
-            <label htmlFor="name">Full Name</label>
+            <label htmlFor="fullName">Full Name</label>
             <input
-              id="name"
+              id="fullName"
               type="text"
-              name="name"
+              name="fullName"
               placeholder="John Doe"
-              value={formData.name}
+              value={formData.fullName}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -50,6 +73,19 @@ function Signup() {
               name="email"
               placeholder="you@example.com"
               value={formData.email}
+              onChange={handleChange}
+              required
+            />
+          </div>
+
+          <div className="signup__field">
+            <label htmlFor="phone">Phone Number</label>
+            <input
+              id="phone"
+              type="tel"
+              name="phone"
+              placeholder="+977 9800000000"
+              value={formData.phone}
               onChange={handleChange}
             />
           </div>
@@ -63,6 +99,7 @@ function Signup() {
               placeholder="Create a password"
               value={formData.password}
               onChange={handleChange}
+              required
             />
           </div>
 
@@ -79,7 +116,9 @@ function Signup() {
             </select>
           </div>
 
-          <Button type="submit" variant="primary">Create Account</Button>
+          <Button type="submit" variant="primary" disabled={loading}>
+            {loading ? 'Creating Account...' : 'Create Account'}
+          </Button>
 
         </form>
 
