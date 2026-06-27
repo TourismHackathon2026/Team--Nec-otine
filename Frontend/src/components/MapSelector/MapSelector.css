@@ -1,0 +1,13 @@
+.map-selector-container {
+  padding: 1.5rem;
+  border: 2px dashed #cbd5e1;
+  text-align: center;
+  background: #f8fafc;
+  border-radius: 12px;
+  transition: all 0.2s ease;
+}
+
+.map-selector-container:hover {
+  border-color: #4f46e5;
+  background: #f1f5f9;
+}
