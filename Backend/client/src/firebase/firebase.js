@@ -5,12 +5,12 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-  apiKey: "AIzaSyC6lL92Zj3OPkol-w7dldbVJiQasrv7BVo",
-  authDomain: "tourgenie-fba0e.firebaseapp.com",
-  projectId: "tourgenie-fba0e",
-  storageBucket: "tourgenie-fba0e.firebasestorage.app",
-  messagingSenderId: "506488245033",
-  appId: "1:506488245033:web:d2654addb8df897ece0538"
+  apiKey: "AIzaSyDJUPnQFbvHc_NJMWbElVO9rilYXKQ7sCk",
+  authDomain: "tourgenie-73ea2.firebaseapp.com",
+  projectId: "tourgenie-73ea2",
+  storageBucket: "tourgenie-73ea2.firebasestorage.app",
+  messagingSenderId: "154686463441",
+  appId: "1:154686463441:web:738d4e4f18c00a050dd4f0"
 };
 
 // Initialize Firebase
