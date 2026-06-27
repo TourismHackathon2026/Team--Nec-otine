@@ -5,7 +5,7 @@ function Navbar() {
   return (
     <nav className="navbar">
       <div className="navbar__logo">
-        <Link to="/">NepalGuide</Link>
+        <Link to="/">Tour Genie</Link>
       </div>
 
       <ul className="navbar__links">

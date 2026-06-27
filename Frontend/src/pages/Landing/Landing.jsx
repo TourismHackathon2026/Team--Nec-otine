@@ -32,7 +32,7 @@ function Landing() {
       {/* Features Section */}
       <section className="landing__features">
         <div className="container">
-          <h2>Why NepalGuide?</h2>
+          <h2>Why Tour Genie?</h2>
           <div className="landing__feature-grid">
 
             <div className="landing__feature-card">

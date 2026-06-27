@@ -34,7 +34,7 @@ function Login() {
     <div className="login">
       <div className="login__card">
         <h2>Welcome Back</h2>
-        <p>Login to your NepalGuide account</p>
+        <p>Login to your Tour Genie account</p>
 
         {error && <div className="login__error">{error}</div>}
 
