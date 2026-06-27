@@ -1,0 +1,71 @@
+.signup {
+  min-height: 80vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-xl);
+}
+
+.signup__card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2xl);
+  width: 100%;
+  max-width: 420px;
+  box-shadow: var(--shadow-md);
+}
+
+.signup__card h2 {
+  margin-bottom: var(--space-xs);
+}
+
+.signup__card > p {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xl);
+}
+
+.signup__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.signup__field label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.signup__field input,
+.signup__field select {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  background-color: var(--color-background);
+}
+
+.signup__field input:focus,
+.signup__field select:focus {
+  border-color: var(--color-primary);
+}
+
+.signup__card .btn {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.signup__switch {
+  text-align: center;
+  margin-top: var(--space-lg);
+  font-size: var(--font-size-sm);
+}
+
+.signup__switch a {
+  color: var(--color-primary);
+  font-weight: 600;
+}
