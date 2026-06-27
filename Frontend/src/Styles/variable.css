@@ -1,0 +1,58 @@
+/*Defining variables for  standard colors and fonts to be used , */
+
+
+:root {
+    /* Brand Colors */
+  --color-primary: #1D1B42;
+  --color-primary-dark: #14122E;
+  --color-primary-light: #7E96A3;
+
+  /* Neutral Colors */
+  --color-background: #DCE6E5;
+  --color-surface: #FFFFFF;
+  --color-border: #A5C0BE;
+
+  /* Text Colors */
+  --color-text-primary: #1D1B42;
+  --color-text-secondary: #5F717B;
+  --color-text-light: #7E96A3;
+
+  /* Feedback Colors */
+  --color-success: #5E8C7A;
+  --color-error: #B03A48;
+  --color-warning: #D9A441;
+
+    /* Spacing Scale */
+  --space-xs: 4px;
+  --space-sm: 8px;
+  --space-md: 16px;
+  --space-lg: 24px;
+  --space-xl: 32px;
+  --space-2xl: 48px;
+  --space-3xl: 64px;
+
+  /* Typography */
+  --font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 2rem;
+  --font-size-4xl: 2.5rem;
+
+  /* Border Radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 12px;
+  --radius-full: 9999px;
+
+  /* Shadows */
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.10);
+  --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
