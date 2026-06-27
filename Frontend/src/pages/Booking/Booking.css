@@ -48,7 +48,7 @@
   font-size: var(--font-size-base);
   outline: none;
   transition: border-color var(--transition-fast);
-  background-color: var(--color-background);
+  background-color: #ffffff; /* 👈 Third time's the charm! */
 }
 
 .booking__field input:focus,

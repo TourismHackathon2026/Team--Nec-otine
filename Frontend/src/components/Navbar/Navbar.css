@@ -51,3 +51,19 @@
 .navbar__cta:hover {
   background-color: var(--color-primary-dark) !important;
 }
+
+.navbar__logout {
+  background: none;
+  border: 1px solid var(--color-primary);
+  color: var(--color-primary);
+  padding: var(--space-xs) var(--space-md);
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: var(--font-size-base);
+  transition: all var(--transition-fast);
+}
+
+.navbar__logout:hover {
+  background-color: var(--color-primary);
+  color: white;
+}

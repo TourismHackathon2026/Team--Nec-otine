@@ -46,7 +46,7 @@ function Signup() {
     <div className="signup">
       <div className="signup__card">
         <h2>Create Account</h2>
-        <p>Join NepalGuide and start exploring</p>
+        <p>Join Tour Genie and start exploring</p>
 
         {error && <div className="signup__error">{error}</div>}
 
@@ -130,4 +130,4 @@ function Signup() {
   )
 }
 
-export default Signup
+export default Signup 
