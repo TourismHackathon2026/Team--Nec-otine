@@ -2,14 +2,17 @@
   background: white;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform var(--transition-fast);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Softer base shadow */
+  /* Upgraded the transition to include the shadow */
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
   display: flex;
   flex-direction: column;
 }
 
+/* 🚀 The Premium Hover Pop */
 .guide-card:hover {
-  transform: translateY(-5px);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
 }
 
 .guide-card__image {
@@ -23,6 +26,7 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-xs);
+  flex: 1; /* Pushes the footer down if heights differ */
 }
 
 .guide-card__name {
@@ -38,8 +42,28 @@
 }
 
 .guide-card__footer {
-  margin-top: var(--space-sm);
+  margin-top: auto; /* Always align at the bottom */
+  padding-top: var(--space-sm);
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+/* 🌟 Dynamic Star Styling */
+.guide-card__rating-container {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.guide-card__stars {
+  color: #fbbf24; /* Beautiful Gold */
+  font-size: 1.1rem;
+  letter-spacing: 2px;
+}
+
+.guide-card__rating-num {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-dark);
 }

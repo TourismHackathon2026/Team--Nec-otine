@@ -48,12 +48,39 @@
   font-size: var(--font-size-base);
   outline: none;
   transition: border-color var(--transition-fast);
-  background-color: #ffffff; /* 👈 Busted the camouflage ghost right here! */
+  background-color: #ffffff;
 }
 
 .planner__field input:focus,
 .planner__field textarea:focus {
   border-color: var(--color-primary);
+}
+
+/* 🚀 Pro-Tier Budget Row */
+.planner__budget-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-sm);
+}
+
+.planner__input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.planner__input-wrapper input {
+  width: 100%;
+  padding-right: 50px !important;
+}
+
+.planner__input-unit {
+  position: absolute;
+  right: var(--space-md);
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  pointer-events: none;
 }
 
 .planner__field textarea {

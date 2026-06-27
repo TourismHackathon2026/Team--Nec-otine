@@ -6,7 +6,10 @@ function Planner() {
   const [formData, setFormData] = useState({
     destination: '',
     days: 3,
-    interests: ''
+    interests: '',
+    minBudget: '4000',
+    maxBudget: '',
+    language: 'English'
   })
   const [itinerary, setItinerary] = useState(null)
   const [loading, setLoading] = useState(false)
@@ -39,8 +42,10 @@ function Planner() {
               role: 'user',
               content: `Create a ${formData.days}-day travel itinerary for ${formData.destination} in Nepal. 
               The traveler is interested in: ${formData.interests}. 
+              Their total estimated budget is between ${formData.minBudget} and ${formData.maxBudget} NPR.
+              Please write the entire response in this language: ${formData.language}.
               Format it clearly with Day 1, Day 2 etc. 
-              For each day list morning, afternoon and evening activities.
+              For each day list morning, afternoon and evening activities, keeping their specific budget constraints in mind.
               Keep it practical and specific to Nepal.`
             }
           ]
@@ -91,6 +96,48 @@ function Planner() {
                 min="1"
                 max="30"
                 value={formData.days}
+                onChange={handleChange}
+                required
+              />
+            </div>
+            
+            <div className="planner__field">
+              <label>Budget Range (NPR)</label>
+              <div className="planner__budget-row">
+                <div className="planner__input-wrapper">
+                  <input
+                    type="number"
+                    name="minBudget"
+                    placeholder="Min"
+                    value={formData.minBudget}
+                    onChange={handleChange}
+                    min="4000"
+                    required
+                  />
+                  <span className="planner__input-unit">NPR</span>
+                </div>
+                <div className="planner__input-wrapper">
+                  <input
+                    type="number"
+                    name="maxBudget"
+                    placeholder="Max"
+                    value={formData.maxBudget}
+                    onChange={handleChange}
+                    required
+                  />
+                  <span className="planner__input-unit">NPR</span>
+                </div>
+              </div>
+            </div>
+
+            <div className="planner__field">
+              <label htmlFor="language">Preferred Language</label>
+              <input
+                id="language"
+                type="text"
+                name="language"
+                placeholder="e.g. English, Nepali, Hindi"
+                value={formData.language}
                 onChange={handleChange}
                 required
               />
