@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
+import { createBooking } from '../../services/api'
 import Button from '../../components/Button/Button'
 import './Booking.css'
 
@@ -12,17 +13,32 @@ function Booking() {
     groupSize: 1,
     message: ''
   })
+  const [error, setError] = useState(null)
+  const [loading, setLoading] = useState(false)
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
-    console.log('Booking data:', { guideId: id, ...formData })
-    // API call comes later
-    alert('Booking submitted! We will connect you shortly.')
-    navigate('/dashboard')
+    setError(null)
+    setLoading(true)
+
+    try {
+      await createBooking({
+        guideId: id,
+        startDate: formData.startDate,
+        endDate: formData.endDate,
+        groupSize: formData.groupSize,
+        message: formData.message
+      })
+      navigate('/dashboard')
+    } catch (err) {
+      setError('Failed to create booking. Please try again.')
+    } finally {
+      setLoading(false)
+    }
   }
 
   return (
@@ -32,6 +48,8 @@ function Booking() {
 
           <h2>Book Your Guide</h2>
           <p>Fill in your trip details and we will confirm your booking.</p>
+
+          {error && <div className="booking__error">{error}</div>}
 
           <form onSubmit={handleSubmit}>
 
@@ -88,8 +106,12 @@ function Booking() {
             </div>
 
             <div className="booking__actions">
-              <Button type="submit" variant="primary">Confirm Booking</Button>
-              <Button variant="outline" onClick={() => navigate(-1)}>Go Back</Button>
+              <Button type="submit" variant="primary" disabled={loading}>
+                {loading ? 'Submitting...' : 'Confirm Booking'}
+              </Button>
+              <Button variant="outline" onClick={() => navigate(-1)}>
+                Go Back
+              </Button>
             </div>
 
           </form>
