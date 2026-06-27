@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react'
 import GuideCard from '../../components/GuideCard/GuideCard'
+import { getAllGuides } from '../../services/api'
 import './GuideList.css'
 
+<<<<<<< HEAD
 const dummyGuides = [
   {
     _id: '1',
@@ -35,19 +37,45 @@ const dummyGuides = [
   }
 ]
 
+=======
+>>>>>>> b48fcf977161c14a9af2a9026371f35b4af41c18
 function GuideList() {
   const [guides, setGuides] = useState([])
   const [loading, setLoading] = useState(true)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
+<<<<<<< HEAD
     setTimeout(() => {
       setGuides(dummyGuides)
       setLoading(false)
     }, 800)
+=======
+    async function fetchGuides() {
+      try {
+        const res = await getAllGuides()
+        setGuides(res.data.guides)
+      } catch (err) {
+        setError('Failed to load guides. Please try again.')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    fetchGuides()
+>>>>>>> b48fcf977161c14a9af2a9026371f35b4af41c18
   }, [])
 
   if (loading) {
     return <div className="guidelist__loading">Loading guides...</div>
+  }
+
+  if (error) {
+    return <div className="guidelist__loading">{error}</div>
+  }
+
+  if (guides.length === 0) {
+    return <div className="guidelist__loading">No guides found yet.</div>
   }
 
   return (
@@ -59,7 +87,16 @@ function GuideList() {
         </div>
         <div className="guidelist__grid">
           {guides.map((guide) => (
-            <GuideCard key={guide._id} guide={guide} />
+            <GuideCard key={guide._id} guide={{
+              _id: guide._id,
+              name: guide.user?.fullName,
+              location: guide.district,
+              bio: guide.bio,
+              specialties: [],
+              pricePerDay: guide.pricePerDay,
+              profileImage: guide.user?.profileImage,
+              rating: guide.rating
+            }} />
           ))}
         </div>
       </div>

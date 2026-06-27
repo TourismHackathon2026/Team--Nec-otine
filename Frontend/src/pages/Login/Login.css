@@ -66,3 +66,12 @@
   color: var(--color-primary);
   font-weight: 600;
 }
+
+.login__error {
+  background: #fee2e2;
+  color: var(--color-error);
+  padding: var(--space-sm) var(--space-md);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  margin-bottom: var(--space-md);
+}
