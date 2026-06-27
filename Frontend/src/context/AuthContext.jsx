@@ -8,6 +8,8 @@ import {
 import { auth } from '../services/firebase'
 import { registerUser, getCurrentUser } from '../services/api'
 
+
+
 const AuthContext = createContext()
 
 export function AuthProvider({ children }) {
