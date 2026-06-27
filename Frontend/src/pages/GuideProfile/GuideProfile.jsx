@@ -1,37 +1,36 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
-import { getGuideById } from '../../services/api'
 import Button from '../../components/Button/Button'
 import './GuideProfile.css'
+
+const dummyGuide = {
+  _id: '1',
+  name: 'Ram Thapa',
+  location: 'Pokhara',
+  bio: 'Expert trekking guide with 10 years of experience in the Annapurna region. I have led over 200 successful treks and speak English, Hindi, and Nepali fluently.',
+  specialties: ['Trekking', 'Photography', 'Camping'],
+  pricePerDay: 3000,
+  profileImage: null,
+  languages: ['English', 'Nepali', 'Hindi'],
+  experience: 10
+}
 
 function GuideProfile() {
   const { id } = useParams()
   const navigate = useNavigate()
   const [guide, setGuide] = useState(null)
   const [loading, setLoading] = useState(true)
-  const [error, setError] = useState(null)
 
   useEffect(() => {
-    async function fetchGuide() {
-      try {
-        const res = await getGuideById(id)
-        setGuide(res.data.guide)
-      } catch (err) {
-        setError('Failed to load guide. Please try again.')
-      } finally {
-        setLoading(false)
-      }
-    }
-
-    fetchGuide()
+    // Replace with real API call later
+    setTimeout(() => {
+      setGuide(dummyGuide)
+      setLoading(false)
+    }, 800)
   }, [id])
 
   if (loading) {
     return <div className="guideprofile__loading">Loading guide...</div>
-  }
-
-  if (error) {
-    return <div className="guideprofile__loading">{error}</div>
   }
 
   if (!guide) {
@@ -41,19 +40,19 @@ function GuideProfile() {
   return (
     <div className="guideprofile">
       <div className="container">
+
         <div className="guideprofile__card">
 
           <div className="guideprofile__left">
             <img
-              src={guide.user?.profileImage || 'https://via.placeholder.com/300'}
-              alt={guide.user?.fullName}
+              src={guide.profileImage || '/default-avatar.png'}
+              alt={guide.name}
               className="guideprofile__image"
             />
             <div className="guideprofile__meta">
-              <p>📍 {guide.district}</p>
+              <p>📍 {guide.location}</p>
               <p>⏳ {guide.experience} years experience</p>
               <p>💬 {guide.languages && guide.languages.join(', ')}</p>
-              <p>⭐ {guide.rating} / 5</p>
             </div>
             <div className="guideprofile__price">
               NPR {guide.pricePerDay} / day
@@ -67,18 +66,19 @@ function GuideProfile() {
           </div>
 
           <div className="guideprofile__right">
-            <h2>{guide.user?.fullName}</h2>
+            <h2>{guide.name}</h2>
             <p className="guideprofile__bio">{guide.bio}</p>
 
-            <h3>Languages</h3>
+            <h3>Specialties</h3>
             <div className="guideprofile__tags">
-              {guide.languages && guide.languages.map((lang, index) => (
-                <span key={index} className="guideprofile__tag">{lang}</span>
+              {guide.specialties && guide.specialties.map((tag, index) => (
+                <span key={index} className="guideprofile__tag">{tag}</span>
               ))}
             </div>
           </div>
 
         </div>
+
       </div>
     </div>
   )
