@@ -1,15 +1,17 @@
-//routing page
-
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import MainLayout from './layouts/MainLayout'
+import Landing from './pages/Landing/Landing'
 
-function styles() {
+function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<div>Landing Page — coming soon</div>} />
+        <Route element={<MainLayout />}>
+          <Route path="/" element={<Landing />} />
+        </Route>
       </Routes>
     </BrowserRouter>
   )
 }
 
-export default styles
+export default App
