@@ -1,0 +1,126 @@
+.dashboard {
+  padding: var(--space-2xl) 0;
+}
+
+/* Welcome */
+.dashboard__welcome {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-2xl);
+}
+
+.dashboard__welcome p {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+/* Stats */
+.dashboard__stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-lg);
+  margin-bottom: var(--space-2xl);
+}
+
+.dashboard__stat-card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard__stat-number {
+  font-size: var(--font-size-4xl);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.dashboard__stat-label {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-top: var(--space-xs);
+}
+
+/* Bookings Section */
+.dashboard__section h3 {
+  margin-bottom: var(--space-lg);
+}
+
+.dashboard__empty {
+  text-align: center;
+  padding: var(--space-3xl);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.dashboard__empty p {
+  margin-bottom: var(--space-lg);
+}
+
+/* Table */
+.dashboard__table-wrapper {
+  overflow-x: auto;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+}
+
+.dashboard__table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--color-background);
+}
+
+.dashboard__table th {
+  background: var(--color-surface);
+  padding: var(--space-md) var(--space-lg);
+  text-align: left;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  font-weight: 600;
+  border-bottom: 1px solid var(--color-border);
+}
+
+.dashboard__table td {
+  padding: var(--space-md) var(--space-lg);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.dashboard__table tr:last-child td {
+  border-bottom: none;
+}
+
+.dashboard__table tr:hover td {
+  background: var(--color-surface);
+}
+
+/* Status Badge */
+.dashboard__status {
+  padding: var(--space-xs) var(--space-sm);
+  border-radius: var(--radius-full);
+  font-size: var(--font-size-sm);
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+.dashboard__status--confirmed {
+  background: #d1fae5;
+  color: var(--color-success);
+}
+
+.dashboard__status--pending {
+  background: #fef3c7;
+  color: var(--color-warning);
+}
+
+.dashboard__status--cancelled {
+  background: #fee2e2;
+  color: var(--color-error);
+}

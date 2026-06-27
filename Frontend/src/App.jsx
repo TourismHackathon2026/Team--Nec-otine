@@ -6,7 +6,8 @@ import Signup from './pages/Signup/Signup'
 import GuideList from './pages/GuideList/GuideList'
 import GuideProfile from './pages/GuideProfile/GuideProfile'
 import Booking from './pages/Booking/Booking'
-
+import Planner from './pages/Planner/Planner'
+import Dashboard from './pages/Dashboard/Dashboard'
 
 
 function App() {
@@ -20,7 +21,8 @@ function App() {
           <Route path="/guides" element={<GuideList />} />
           <Route path="/guides/:id" element={<GuideProfile />} />
           <Route path="/booking/:id" element={<Booking />} />
-
+          <Route path="/planner" element={<Planner />} />
+          <Route path="/dashboard" element={<Dashboard />} />
         </Route>
       </Routes>
     </BrowserRouter>

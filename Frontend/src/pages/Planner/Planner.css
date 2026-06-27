@@ -1,0 +1,115 @@
+.planner {
+  padding: var(--space-2xl) 0;
+}
+
+.planner__header {
+  text-align: center;
+  margin-bottom: var(--space-2xl);
+}
+
+.planner__header p {
+  color: var(--color-text-secondary);
+  margin-top: var(--space-sm);
+}
+
+.planner__layout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-2xl);
+  align-items: start;
+}
+
+.planner__form {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  box-shadow: var(--shadow-sm);
+}
+
+.planner__field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xs);
+  margin-bottom: var(--space-md);
+}
+
+.planner__field label {
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-primary);
+}
+
+.planner__field input,
+.planner__field textarea {
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-base);
+  outline: none;
+  transition: border-color var(--transition-fast);
+  background-color: var(--color-background);
+}
+
+.planner__field input:focus,
+.planner__field textarea:focus {
+  border-color: var(--color-primary);
+}
+
+.planner__field textarea {
+  resize: vertical;
+}
+
+.planner__form .btn {
+  width: 100%;
+  margin-top: var(--space-sm);
+}
+
+.planner__result {
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  min-height: 400px;
+}
+
+.planner__placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  color: var(--color-text-light);
+}
+
+.planner__placeholder span {
+  font-size: 3rem;
+  margin-bottom: var(--space-md);
+}
+
+.planner__loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 350px;
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-lg);
+}
+
+.planner__error {
+  color: var(--color-error);
+  padding: var(--space-md);
+  border: 1px solid var(--color-error);
+  border-radius: var(--radius-md);
+}
+
+.planner__itinerary h3 {
+  margin-bottom: var(--space-lg);
+  color: var(--color-primary);
+}
+
+.planner__itinerary-content p {
+  margin-bottom: var(--space-sm);
+  line-height: 1.8;
+  color: var(--color-text-primary);
+}
