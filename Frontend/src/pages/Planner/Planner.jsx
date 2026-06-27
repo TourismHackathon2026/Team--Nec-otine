@@ -23,33 +23,33 @@ function Planner() {
     setItinerary(null)
 
     try {
-      const response = await fetch('https://api.anthropic.com/v1/messages', {
+      const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'x-api-key': import.meta.env.VITE_ANTHROPIC_API_KEY,
-          'anthropic-version': '2023-06-01',
-          'anthropic-dangerous-direct-browser-access': 'true'
+          'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}`,
         },
         body: JSON.stringify({
-          model: 'claude-sonnet-4-6',
-          max_tokens: 1024,
+          model: 'llama-3.3-70b-versatile',
           messages: [
             {
               role: 'user',
-              content: `Create a ${formData.days}-day travel itinerary for ${formData.destination} in Nepal. 
-              The traveler is interested in: ${formData.interests}. 
-              Format it clearly with Day 1, Day 2 etc. 
-              For each day list morning, afternoon and evening activities.
-              Keep it practical and specific to Nepal.`
+              content: `Create a ${formData.days}-day travel itinerary for ${formData.destination} in Nepal. The traveler is interested in: ${formData.interests}. Format it clearly with Day 1, Day 2 etc. For each day list morning, afternoon and evening activities. Keep it practical and specific to Nepal.`
             }
           ]
         })
       })
 
       const data = await response.json()
-      setItinerary(data.content[0].text)
+      console.log('Groq response:', data)
+
+      if (data.choices && data.choices[0]) {
+        setItinerary(data.choices[0].message.content)
+      } else {
+        setError('Failed to generate itinerary. Please try again.')
+      }
     } catch (err) {
+      console.error(err)
       setError('Failed to generate itinerary. Please try again.')
     } finally {
       setLoading(false)
@@ -153,4 +153,4 @@ function Planner() {
   )
 }
 
-export default Planner  
+export default Planner
