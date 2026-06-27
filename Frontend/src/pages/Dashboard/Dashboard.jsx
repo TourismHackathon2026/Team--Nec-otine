@@ -1,8 +1,5 @@
-<<<<<<< Updated upstream
 import { useState, useEffect } from 'react'
-=======
 import React, { useState } from 'react'
->>>>>>> Stashed changes
 import { useNavigate } from 'react-router-dom'
 import { getMyBookings, updateBookingStatus } from '../../services/api'
 import { useAuth } from '../../context/AuthContext'
@@ -14,8 +11,6 @@ import './Dashboard.css'
 // ----- Tourist Dashboard -----
 function TouristDashboard({ bookings }) {
   const navigate = useNavigate()
-<<<<<<< Updated upstream
-=======
   const myBookings = dummyBookings.filter(b => b.touristName === user.name)
 
   // Maps and AI state management integrations
@@ -61,7 +56,6 @@ function TouristDashboard({ bookings }) {
       setLoading(false)
     }
   }
->>>>>>> Stashed changes
 
   return (
     <>
@@ -201,8 +195,6 @@ function TouristDashboard({ bookings }) {
 // ----- Guide Dashboard -----
 function GuideDashboard({ bookings, onStatusUpdate }) {
   const navigate = useNavigate()
-<<<<<<< Updated upstream
-=======
   const myRequests = dummyBookings
 
   function handleAccept(bookingId) {
@@ -214,7 +206,6 @@ function GuideDashboard({ bookings, onStatusUpdate }) {
     console.log('Rejected booking:', bookingId)
     alert('Booking rejected.')
   }
->>>>>>> Stashed changes
 
   return (
     <>
@@ -298,7 +289,6 @@ function GuideDashboard({ bookings, onStatusUpdate }) {
 
 // ----- Main Dashboard -----
 function Dashboard() {
-<<<<<<< Updated upstream
   const { user } = useAuth()
   const [bookings, setBookings] = useState([])
   const [loading, setLoading] = useState(true)
@@ -337,10 +327,8 @@ function Dashboard() {
   if (error) {
     return <div className="guidelist__loading">{error}</div>
   }
-=======
   // Toggle this to test either the 'dummyTourist' or 'dummyGuide' view flows
   const user = dummyTourist
->>>>>>> Stashed changes
 
   return (
     <div className="dashboard">
