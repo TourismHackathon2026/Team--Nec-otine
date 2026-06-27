@@ -46,7 +46,7 @@
   font-size: var(--font-size-base);
   outline: none;
   transition: border-color var(--transition-fast);
-  background-color: var(--color-background);
+  background-color: #ffffff; /* Updated to white so it pops! */
 }
 
 .signup__field input:focus,

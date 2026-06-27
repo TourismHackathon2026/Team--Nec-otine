@@ -1,9 +1,11 @@
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router-dom';
 import './MainLayout.css';
 
 function MainLayout() {
+  const location = useLocation();
+
   return (
     <div className="main-layout">
       <Navbar />
@@ -12,7 +14,7 @@ function MainLayout() {
         <Outlet />
       </main>
       
-      <Footer />
+      {location.pathname === '/' && <Footer />}
     </div>
   );
 }
