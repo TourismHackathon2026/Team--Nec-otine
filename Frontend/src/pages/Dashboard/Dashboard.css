@@ -8,6 +8,12 @@
   align-items: center;
   justify-content: space-between;
   margin-bottom: var(--space-2xl);
+  flex-wrap: wrap;
+  gap: var(--space-md);
+}
+
+.dashboard__welcome h2 {
+  margin-bottom: var(--space-xs);
 }
 
 .dashboard__welcome p {
@@ -38,6 +44,8 @@
   font-size: var(--font-size-4xl);
   font-weight: 700;
   color: var(--color-primary);
+  line-height: 1;
+  margin-bottom: var(--space-xs);
 }
 
 .dashboard__stat-label {
@@ -123,4 +131,50 @@
 .dashboard__status--cancelled {
   background: #fee2e2;
   color: var(--color-error);
+}
+
+/* Guide Request Cards */
+.dashboard__cards {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-lg);
+}
+
+.dashboard__request-card {
+  background: var(--color-background);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-lg);
+  padding: var(--space-lg);
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  box-shadow: var(--shadow-sm);
+}
+
+.dashboard__request-info h4 {
+  font-size: var(--font-size-lg);
+  margin-bottom: var(--space-sm);
+}
+
+.dashboard__request-info p {
+  font-size: var(--font-size-sm);
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-xs);
+}
+
+.dashboard__request-message {
+  font-style: italic;
+  margin-top: var(--space-sm);
+}
+
+.dashboard__request-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-md);
+}
+
+.dashboard__request-buttons {
+  display: flex;
+  gap: var(--space-sm);
 }
